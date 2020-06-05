@@ -123,6 +123,11 @@ def whiskers(a):
     
     return (lower_whisker, upper_whisker)
 
+def boxplot_statistics(a):
+    (lower_whisker, upper_whisker) = whiskers(a) 
+
+    return (lower_whisker, lower_quartile(a), np.median(a), upper_quartile(a), upper_whisker)
+
 def root_mean_squared_error(y, y_pred):    
     '''returns root mean squared error'''
     return np.sqrt(mean_squared_error(y, y_pred))
