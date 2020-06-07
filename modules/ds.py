@@ -114,6 +114,9 @@ def coarsen_categories(df, coarsen_data):
         
     return df
 
+def reindex_columns(df, columns):
+    return df.reindex(columns=columns)
+
 def lower_quartile(a):
     return np.percentile(a, 25)
 
@@ -138,6 +141,10 @@ def boxplot_statistics(a):
 def root_mean_squared_error(y, y_pred):    
     '''returns root mean squared error'''
     return np.sqrt(mean_squared_error(y, y_pred))
+
+def median_absolute_error(y, y_pred):    
+    '''returns median absolute error'''
+    return np.median(np.abs(y - y_pred))
 
 def mean_percentage_error(y, y_pred):
     '''returns mean percentage error'''
