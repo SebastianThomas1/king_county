@@ -93,7 +93,14 @@ def non_unique_features_of_duplicates(df):
     number_of_non_unique_values = (number_of_values > 1).sum()
     return np.array(number_of_non_unique_values[number_of_non_unique_values != 0].index)
 
-def engineer_binned(df, bin_data):
+def logarithmize_features(df, to_be_logarithmized, log1p=True):
+    for entry in to_be_logarithmized:
+        (feature, logarithmized_feature) = entry if type(entry) == tuple else (entry, entry + ' log')
+        df[logarithmized_feature] = np.log1p(df[feature]) if log1p else np.log(df[feature])
+    
+    return df
+
+def bin_features(df, bin_data):
     for (key, (bins, labels)) in bin_data.items():
         (feature, binned_feature) = key if type(key) == tuple else (key, key + ' bin')
         df[binned_feature] = pd.cut(df[feature], bins, labels=labels)
