@@ -2,7 +2,12 @@
 
 A project on exploratory data analysis.
 
+Sebastian Thomas @ neue fische Bootcamp Data Science<br />
+(datascience at sebastianthomas dot de)
+
 This was my first project at the neue fische Bootcamp Data Science. It was centered around exploratory data analysis techniques and simple predictive analysis using ordinary linear regression. After the bootcamp, the analysis was extended.
+
+The instances in the data set represent house sales. The task is to describe the impact of the given features on the house sales prices resp. to predict the latter with machine learning methods.
 
 ## Results
 
@@ -35,6 +40,9 @@ The area with the highest housesale prices is Medina with zipcode 98039, a city 
 
 ![waterfront][waterfront]
 
+- The average error of the predictive model is about 12% (mean absolute percentage error) resp. $ 37,000 (median absolute error).
+
+
 [price]: figures/price.svg "Distribution of price"
 [zipcodes]: figures/zipcode.svg "House sale price medians grouped by zipcode"
 [zipcodes_map]: figures/zipcode_map.svg "Map of zipcodes in King county, coloured by median house sale price"
@@ -48,7 +56,7 @@ The area with the highest housesale prices is Medina with zipcode 98039, a city 
 
 - [Part 1: Data mining](king_county_1_data_mining.ipynb)
 - [Part 2: Data cleaning](king_county_2_data_cleaning.ipynb)
-- [Part 3: Feature engineering](king_county_3_engineering.ipynb)
+- [Part 3: Feature engineering](king_county_3_feature_engineering.ipynb)
 - [Part 4: Exploratory data analysis](king_county_4_exploratory_data_analysis.ipynb)
 - [Part 5: Predictive analysis](king_county_5_predictive_analysis.ipynb)
 - [Part 6: Visualization](king_county_6_visualization.ipynb)

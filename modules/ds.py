@@ -101,6 +101,8 @@ def logarithmize_features(df, to_be_logarithmized, log1p=True):
     return df
 
 def bin_features(df, bin_data):
+    df = df.copy()
+
     for (key, (bins, labels)) in bin_data.items():
         (feature, binned_feature) = key if type(key) == tuple else (key, key + ' bin')
         df[binned_feature] = pd.cut(df[feature], bins, labels=labels)
@@ -108,6 +110,8 @@ def bin_features(df, bin_data):
     return df
 
 def coarsen_categories(df, coarsen_data):
+    df = df.copy()
+
     for (key, coarsen_map) in coarsen_data.items():
         (feature, coarsened_feature) = key if type(key) == tuple else (key, key + ' cat')
         df[coarsened_feature] = df[feature].map(coarsen_map).astype('category')
