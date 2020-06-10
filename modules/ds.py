@@ -114,6 +114,9 @@ def coarsen_categories(df, coarsen_data):
         
     return df
 
+def rename_columns(df, column_map):
+    return df.rename(column_map, axis=1)
+
 def reindex_columns(df, columns):
     return df.reindex(columns=columns)
 
